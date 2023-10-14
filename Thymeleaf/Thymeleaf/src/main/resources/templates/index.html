@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hello World</title>
+    <link th:href="@{/css/style.css}"rel="stylesheet"/>
+    <script th:src="@{/js/javascript.js}"></script>
+</head>
+<body>
+<h1>Test Param</h1>
+<p th:utext="#{fpt.message}" class="title"></p>
+
+<form method="get" action="/index2">
+    <input type="input" name="name">
+    <button type="submit">Submit</button>
+</form>
+<h1>Test Post</h1>
+<form method="post" action="/addUser">
+    <input type="input" name="name">
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
