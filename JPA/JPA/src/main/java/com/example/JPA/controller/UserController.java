@@ -22,15 +22,13 @@ public class UserController {
     @PostMapping("/login")
     public String login(String username, String password, Model model) {
         User user = iUserService.getUserByNameAndPassword(username, password);
+        model.addAttribute("users", iUserService.getAllUser());
         if (user != null) {
-            return "homeScreen";
+            return "home";
+        } else {
+            return "errorScreen";
         }
-        return "errorScreen";
+
     }
 
-    @GetMapping("/user")
-    public String user(Model model) {
-        model.addAttribute("users", iUserService.getAllUser());
-        return "tableData";
-    }
 }
