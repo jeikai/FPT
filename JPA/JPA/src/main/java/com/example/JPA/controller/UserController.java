@@ -14,7 +14,6 @@ public class UserController {
     @Autowired
     UserService iUserService;
 
-
     @GetMapping("/")
     public String index() {
         return "index";
