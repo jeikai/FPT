@@ -1,17 +1,13 @@
 package com.example.JPA.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-import java.io.Serializable;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "user")
-public class User implements Serializable {
+public class User  {
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
     @Column(name = "username")
     private String username;

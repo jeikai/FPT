@@ -8,27 +8,27 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Objects;
+
 @Controller
 public class UserController {
 
     @Autowired
     UserService iUserService;
 
-    @GetMapping("/")
-    public String index() {
-        return "index";
+    @GetMapping("/login")
+    public String login() {
+        return "login";
     }
 
-    @PostMapping("/login")
-    public String login(String username, String password, Model model) {
+    @PostMapping("/submit")
+    public String submit(String username, String password, Model model) {
         User user = iUserService.getUserByNameAndPassword(username, password);
-        model.addAttribute("users", iUserService.getAllUser());
-        if (user != null) {
-            return "home";
-        } else {
-            return "errorScreen";
+        if (Objects.isNull(user)) {
+            model.addAttribute("message", "Please enter correct username and password to login");
+            return "login";
         }
-
+        return "redirect:home";
     }
 
 }
