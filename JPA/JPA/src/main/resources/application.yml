@@ -1,0 +1,14 @@
+#spring.datasource.url=jdbc:mysql://localhost:3306/learn?useSSL=false
+#
+#
+#spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/SERVJSP_exam?useSSL=false
+    username:
+    password:
+#  jpa:
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
